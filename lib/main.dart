@@ -3,6 +3,7 @@ import 'package:esh7nly/features/home/view/controller/pick%20image%20cubit/pick_
 import 'package:esh7nly/features/home/view/screens/get_image_text_test.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'features/home/view/controller/copy past cubit/copy_paste_cubit.dart';
 
 void main() {
   runApp(const TextDetector());
@@ -15,7 +16,8 @@ class TextDetector extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiBlocProvider(providers: [
       BlocProvider(create: (context)=>PickImageCubit()),
-      BlocProvider(create: (context)=>GetTextFromImageCubit())
+      BlocProvider(create: (context)=>GetTextFromImageCubit()),
+      BlocProvider(create: (context)=>CopyPasteCubit())
     ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,

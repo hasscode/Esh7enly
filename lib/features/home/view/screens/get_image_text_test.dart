@@ -1,5 +1,6 @@
 import 'dart:io';
-
+import 'package:esh7nly/features/home/view/controller/pick%20image%20cubit/pick_image_cubit.dart';
+import 'package:flutter_phone_direct_caller/flutter_phone_direct_caller.dart';
 import 'package:esh7nly/features/home/view/controller/get%20text%20from%20image%20OCR%20cubit/get_text_from_image_cubit.dart';
 import 'package:esh7nly/features/home/view/controller/get%20text%20from%20image%20OCR%20cubit/get_text_from_image_state.dart';
 import 'package:esh7nly/features/home/view/widgets/get_text_from_image_button.dart';
@@ -44,6 +45,7 @@ final TextEditingController getTextController =TextEditingController();
             ElevatedButton(
               onPressed: () {
                 if (pickedImage != null) {
+
                   BlocProvider.of<GetTextFromImageCubit>(context).getTextFromImage(pickedImage!);
                 } else {
                   ScaffoldMessenger.of(context).showSnackBar(
@@ -56,7 +58,8 @@ final TextEditingController getTextController =TextEditingController();
             Padding(
               padding: const EdgeInsets.all(24.0),
               child: TextFromImageWidget()
-            )
+            ),
+
           ],
         ),
       ),
